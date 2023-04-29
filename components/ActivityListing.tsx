@@ -48,8 +48,23 @@ function ActivityListing() {
         <div className="flex flex-col my-5 space-y-1">
           {activities?.length === 0 ? (
             <div>
-              <Image src="/pitch.jpeg" width={200} height={200} />
-              <div className="text-gray-500 text-sm">No activities found.</div>
+              <Image
+                alt="pitch"
+                className="w-full h-52 object-cover rounded-md"
+                src="/pitch.jpeg"
+                width={200}
+                height={200}
+              />
+              <div className="text-gray-500 mt-4">
+                No activities found.
+                <Link
+                  href="/activity-scheduler"
+                  className="text-primary-100 font-semibold"
+                >
+                  {" "}
+                  Schedule activity
+                </Link>
+              </div>
             </div>
           ) : (
             activities?.map((activity: ActivityType, index: number) => (
