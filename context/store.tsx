@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { ActivityType } from "@/types/ActivityType";
 import { PerformerType } from "@/types/PerformerType";
 import { ActivityTypesType } from "@/types/ActivityTypesType";
@@ -8,7 +14,11 @@ import { PitchType } from "@/types/PitchType";
 
 const GlobalContext = createContext({});
 
-export const GlobalContextProvider = ({ children }) => {
+interface Props {
+  children?: ReactNode;
+}
+
+export const GlobalContextProvider = ({ children }: Props) => {
   const [activities, setActivities] = useState<ActivityType[]>([]);
 
   const [performers, setPerformer] = useState<PerformerType[]>([
