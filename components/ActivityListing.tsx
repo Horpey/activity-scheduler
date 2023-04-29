@@ -4,11 +4,9 @@ import { Fragment, useState } from "react";
 import { useGlobalContext } from "@/context/store";
 import { ActivityType } from "@/types/ActivityType";
 import { PropsType } from "@/types/PropsType";
-import { Dialog, Menu, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
-
-import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 
 function ActivityListing() {
   const { activities, setActivities } = useGlobalContext() as PropsType;
@@ -73,7 +71,7 @@ function ActivityListing() {
                   <div className="bg-gray-200 h-3 w-3 rounded-full"></div>
                   <div className="bg-gray-200 h-1 w-0.5 flex-grow mt-2"></div>
                 </div>
-                <div className="ml-4 text-gray-700 flex items-start mb-5">
+                <div className="ml-4 text-gray-700  mb-5">
                   <div>
                     <span className="capitalize">
                       {activity?.activity_type}{" "}
@@ -88,59 +86,23 @@ function ActivityListing() {
                     </span>
                   </div>
 
-                  <Menu as="div" className="relative inline-block text-left">
-                    <div>
-                      <Menu.Button className="ml-3">
-                        <span className="sr-only">More</span>
-                        <EllipsisHorizontalIcon className="h-5 w-5" />
-                      </Menu.Button>
-                    </div>
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
+                  <div className="mt-3 space-x-2">
+                    <Link
+                      href={`/activity-scheduler?id=${activity?.id}`}
+                      className="text-xs bg-slate-800 text-white px-2 py-1 rounded-md"
                     >
-                      <Menu.Items className="absolute left-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                        <div className="px-1 py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <Link
-                                href={`/activity-scheduler?id=${activity?.id}`}
-                                className={`${
-                                  active
-                                    ? "bg-primary-100/20 "
-                                    : "text-gray-900"
-                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                              >
-                                Update
-                              </Link>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                onClick={() => {
-                                  setDeleteModal(true);
-                                  setActiveDelete(activity);
-                                }}
-                                className={`${
-                                  active
-                                    ? "bg-primary-100/20 "
-                                    : "text-gray-900"
-                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                              >
-                                Delete
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </div>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
+                      Update
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setDeleteModal(true);
+                        setActiveDelete(activity);
+                      }}
+                      className="text-xs bg-red-800 text-white px-2 py-1 rounded-md"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             ))

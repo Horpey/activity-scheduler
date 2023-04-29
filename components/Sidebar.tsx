@@ -131,7 +131,7 @@ function Sidebar() {
                                   item.current
                                     ? "bg-gray-50 text-primary-100"
                                     : "text-gray-700 hover:text-primary-100 hover:bg-gray-50",
-                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold py-5"
                                 )}
                               >
                                 <item.icon
@@ -148,6 +148,12 @@ function Sidebar() {
                             </li>
                           ))}
 
+                          <li>
+                            <p className="text-xs font-semibold leading-6 text-gray-400 uppercase tracking-widest px-4">
+                              Admin
+                            </p>
+                          </li>
+
                           {admin.map((item) => (
                             <li key={item.name}>
                               <Link
@@ -156,7 +162,7 @@ function Sidebar() {
                                   item.current
                                     ? "bg-gray-50 text-primary-100"
                                     : "text-gray-700 hover:text-primary-100 hover:bg-gray-50",
-                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold py-5"
                                 )}
                               >
                                 <item.icon
@@ -274,16 +280,13 @@ function Sidebar() {
         <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
           Dashboard
         </div>
-        <a href="#">
-          <span className="sr-only">Your profile</span>
-          <Image
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-full bg-gray-50"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
-          />
-        </a>
+
+        <Link
+          className="bg-primary-100 text-white rounded-md p-4 text-center"
+          href="/activity-scheduler"
+        >
+          Schedule a task
+        </Link>
       </div>
     </>
   );

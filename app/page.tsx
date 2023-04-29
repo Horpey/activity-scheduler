@@ -7,7 +7,7 @@ import ActivityListing from "@/components/ActivityListing";
 export default function HomePage() {
   return (
     <div>
-      <div className="grid grid-cols-12 items-center">
+      <div className="md:grid grid-cols-12 items-center">
         <div className="col-span-10">
           <h1 className="font-light text-5xl">Good evening</h1>
           <p className="mt-2">
@@ -16,7 +16,7 @@ export default function HomePage() {
         </div>
         <div className="col-span-2">
           <Link
-            className="bg-primary-100 text-white rounded-md p-4"
+            className="bg-primary-100 text-white rounded-md p-4 hidden md:block text-center"
             href="/activity-scheduler"
           >
             Schedule a task
@@ -24,7 +24,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 my-6 space-x-4">
+      <div className="md:grid grid-cols-12 my-6 md:space-x-4">
         <div className="col-span-8">
           <ActivityListing />
         </div>

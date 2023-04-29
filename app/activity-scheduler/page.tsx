@@ -31,6 +31,22 @@ function ActivitySchedulerPage() {
     }
   }, [paramId, activities]);
 
+  const validateData = (e: any) => {
+    const activity = activities?.find(
+      (activity: ActivityType) =>
+        activity.datetime === e.target.datetime.value &&
+        activity.pitch === e.target.pitch.value
+    );
+
+    if (activity) {
+      toast.error("Activity already scheduled for this pitch and time");
+
+      return false;
+    }
+
+    return true;
+  };
+
   const onSubmit = (e: any) => {
     e.preventDefault();
 
@@ -54,6 +70,8 @@ function ActivitySchedulerPage() {
       return;
     }
 
+    if (!validateData(e)) return;
+
     const activity: ActivityType = {
       id: activities ? activities.length + 1 : 1,
       activity_type: e.target.activity_type.value,
@@ -71,11 +89,11 @@ function ActivitySchedulerPage() {
 
   return (
     <div>
-      <h1 className="font-light text-5xl">
+      <h1 className="font-light text-5xl text-center">
         {paramId ? "Update" : "Schedule"} Activity
       </h1>
 
-      <form onSubmit={onSubmit} className="my-5 max-w-xl">
+      <form onSubmit={onSubmit} className="my-10 max-w-xl mx-auto">
         <div className="space-y-4">
           <div>
             <label htmlFor="activity_type">Activity Type</label>
