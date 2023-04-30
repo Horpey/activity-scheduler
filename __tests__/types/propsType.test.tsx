@@ -30,6 +30,7 @@ describe("PropsType type", () => {
       activityTypes,
       performers,
       pitches,
+      setActivities: () => {},
     };
 
     expect(props).toMatchObject({
