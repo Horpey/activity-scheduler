@@ -134,6 +134,7 @@ function Sidebar() {
                                   "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold py-5"
                                 )}
                               >
+                                .....
                                 <item.icon
                                   className={classNames(
                                     item.current
