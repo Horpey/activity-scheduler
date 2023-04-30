@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import "whatwg-fetch";
 
 async function fetchWeatherData() {
   const appId = "439d4b804bc8187953eb36d2a8c26a02";
