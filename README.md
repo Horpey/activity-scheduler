@@ -34,6 +34,16 @@ npm run test
 npm run lint
 ```
 
+### Run with [Docker](https://www.docker.com/)
+
+```sh
+docker build -t activity_scheduler:latest .
+```
+
+```sh
+docker run -p 3000:3000 activity_scheduler:latest
+```
+
 ## Followup Questions
 
 **1. Libraries Used**
