@@ -8,5 +8,5 @@ export interface PropsType {
   performers?: PerformerType[];
   activityTypes?: ActivityTypesType[];
   pitches?: PitchType[];
-  setActivities: (activities: ActivityType[]) => void;
+  setActivities?: (activities: ActivityType[]) => void;
 }
