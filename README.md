@@ -6,13 +6,33 @@ This is a web application that allows users to schedule activities and view weat
 To run the application locally, you will need to have Node.js and npm installed on your computer. Once you have installed Node.js, download the project and navigate to the project directory in your terminal.
 Run the following command to install the necessary dependencies:
 
-    npm install
+```sh
+npm install
+```
 
-Once the dependencies have been installed, run the following command to start the application:
+### Compile and Hot-Reload for Development
 
-    npm dev
+```sh
+npm run dev
+```
 
-This will start the application and it will be available at `http://localhost:3000` in your web browser.
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
 
 ## Followup Questions
 
