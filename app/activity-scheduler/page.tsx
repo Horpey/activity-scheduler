@@ -96,7 +96,9 @@ function ActivitySchedulerPage() {
       <form onSubmit={onSubmit} className="my-10 max-w-xl mx-auto">
         <div className="space-y-4">
           <div>
-            <label htmlFor="activity_type">Activity Type</label>
+            <label className="block" htmlFor="activity_type">
+              Activity Type
+            </label>
             <select
               required
               className="border border-gray-300 rounded-md p-2 w-full"
@@ -114,7 +116,9 @@ function ActivitySchedulerPage() {
           </div>
 
           <div>
-            <label htmlFor="performer">Select Performer</label>
+            <label className="block" htmlFor="performer">
+              Select Performer
+            </label>
 
             <select
               required
@@ -133,7 +137,9 @@ function ActivitySchedulerPage() {
           </div>
 
           <div>
-            <label htmlFor="pitch">Select Pitch</label>
+            <label className="block" htmlFor="pitch">
+              Select Pitch
+            </label>
             <select
               required
               className="border border-gray-300 rounded-md p-2 w-full"
@@ -152,7 +158,9 @@ function ActivitySchedulerPage() {
           </div>
 
           <div>
-            <label htmlFor="datetime">Set Date and Time</label>
+            <label className="block" htmlFor="datetime">
+              Set Date and Time
+            </label>
             <input
               required
               defaultValue={updateActivity?.datetime || ""}
