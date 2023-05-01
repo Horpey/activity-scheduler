@@ -52,6 +52,13 @@ function classNames(...classes: string[]) {
 function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const checkActiveLink = (name: string) => {
+    if (name === "Dashboard") {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -128,16 +135,15 @@ function Sidebar() {
                               <Link
                                 href={item.href}
                                 className={classNames(
-                                  item.current
+                                  checkActiveLink(item.href)
                                     ? "bg-gray-50 text-primary-100"
                                     : "text-gray-700 hover:text-primary-100 hover:bg-gray-50",
                                   "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold py-5"
                                 )}
                               >
-                                .....
                                 <item.icon
                                   className={classNames(
-                                    item.current
+                                    checkActiveLink(item.href)
                                       ? "text-primary-100"
                                       : "text-gray-400 group-hover:text-primary-100",
                                     "h-6 w-6 shrink-0"
@@ -160,7 +166,7 @@ function Sidebar() {
                               <Link
                                 href={item.href}
                                 className={classNames(
-                                  item.current
+                                  checkActiveLink(item.href)
                                     ? "bg-gray-50 text-primary-100"
                                     : "text-gray-700 hover:text-primary-100 hover:bg-gray-50",
                                   "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold py-5"
@@ -168,7 +174,7 @@ function Sidebar() {
                               >
                                 <item.icon
                                   className={classNames(
-                                    item.current
+                                    checkActiveLink(item.href)
                                       ? "text-primary-100"
                                       : "text-gray-400 group-hover:text-primary-100",
                                     "h-6 w-6 shrink-0"
@@ -212,7 +218,7 @@ function Sidebar() {
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current
+                          checkActiveLink(item.href)
                             ? "bg-gray-50 text-primary-100"
                             : "text-gray-700 hover:text-primary hover:bg-gray-50",
                           "group flex gap-x-3 rounded-md px-4 py-5 text-sm leading-6 font-semibold"
@@ -220,7 +226,7 @@ function Sidebar() {
                       >
                         <item.icon
                           className={classNames(
-                            item.current
+                            checkActiveLink(item.href)
                               ? "text-primary-100"
                               : "text-gray-400 group-hover:text-primary-100",
                             "h-6 w-6 shrink-0"
@@ -243,7 +249,7 @@ function Sidebar() {
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current
+                          checkActiveLink(item.href)
                             ? "bg-gray-50 text-primary-100"
                             : "text-gray-700 hover:text-primary hover:bg-gray-50",
                           "group flex gap-x-3 rounded-md px-4 py-5 text-sm leading-6 font-semibold"
@@ -251,7 +257,7 @@ function Sidebar() {
                       >
                         <item.icon
                           className={classNames(
-                            item.current
+                            checkActiveLink(item.href)
                               ? "text-primary-100"
                               : "text-gray-400 group-hover:text-primary-100",
                             "h-6 w-6 shrink-0"
